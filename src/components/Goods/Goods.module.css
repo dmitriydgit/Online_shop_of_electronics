@@ -1,0 +1,9 @@
+.GoodsGrid{
+	
+display: flex;
+flex-flow: row;
+justify-content: flex-start;
+align-items: center;
+flex-wrap: wrap;
+
+}

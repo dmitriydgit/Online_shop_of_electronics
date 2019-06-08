@@ -1,0 +1,10 @@
+.SearchField{
+	border: 1px solid lightgrey;
+    border-radius: 15px;
+		padding: 5px;
+		font-size:18px;
+}
+
+.SearchField:focus{
+	outline: none;
+}

@@ -1,0 +1,14 @@
+.About{
+margin-bottom:80px;
+}
+
+.About p{
+	margin:20px;
+	text-align: justify;
+	text-indent: 20px;
+}
+
+.About a{
+	text-decoration: none;
+	color: black;
+}

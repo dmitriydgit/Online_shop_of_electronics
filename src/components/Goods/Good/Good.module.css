@@ -1,0 +1,78 @@
+.Card{
+	display: flex;
+	flex-flow:column;
+	justify-content: center;
+	align-items:baseline;
+	border: 2px solid grey;
+	box-shadow:5px 10px 15px #ccc;
+	border-radius:5px;
+	box-sizing: border-box; 
+	background-color: rgb(252, 252, 252);
+	width: 200px;
+	height: 450px;
+	margin: 20px;
+	padding:5px;
+	/* box-sizing:border-box; */
+
+}
+
+.CardImg{
+	width: 100%;
+	height: auto;
+	border-radius: inherit;
+}
+
+.CardDescription{
+	/* margin-bottom: 20px; */
+}
+
+.Button{
+	text-align: center;
+	box-sizing: border-box;
+
+}
+
+.CartImg{
+	width: 20px;
+	height: 20px; 
+	text-align: right;
+}
+
+.ClickedCard{
+	display: flex;
+	flex-flow:row;
+	justify-content: space-around;
+	align-items:flex-start;
+	border: 2px solid grey;
+	box-shadow:5px 10px 15px #ccc;
+	border-radius:5px;
+	box-sizing: border-box; 
+	background-color:rgb(252, 252, 252);
+	width: auto;
+	height: auto;
+	margin: 10px;
+	padding:20px;
+}
+
+.ClickedCardImg{
+	width: 180px;
+	height: auto;
+	transition: 0.5s;
+}
+
+.ClickedCardImg:active,
+.ClickedCardImg:hover{
+	width:100%;
+	height:auto;
+
+	transition: 0.5s;
+}
+
+
+.CardDescription{
+	display: flex;
+	flex-flow:column;
+	justify-content: flex-start;
+	align-items:center;
+	width:100%;
+}
