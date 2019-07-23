@@ -1,0 +1,189 @@
+[
+	{
+		"brand": "HP",
+		"id": 1,
+		"model": "envy",
+		"price": "600",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)"
+		},
+		"url": "https://image.freepik.com/free-photo/laptop-wooden-table_53876-20635.jpg"
+	},
+	{
+		"brand": "Dell",
+		"id": 2,
+		"model": "enspire",
+		"price": "650",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/digital-laptop-working-global-business-concept_53876-23438.jpg"
+	},
+	{
+		"brand": "MacBook",
+		"id": 3,
+		"model": "pro",
+		"price": "900",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/marketing-strategy-connting-digital-devices-concept_53876-23053.jpg"
+	},
+	{
+		"brand": "Sony",
+		"id": 4,
+		"model": "vaio",
+		"price": "550",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/business-documents-advertising-design-planning-office-table_1715-2106.jpg"
+	},
+	{
+		"brand": "Lenovo",
+		"id": 5,
+		"model": "yoga",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/laptop-with-smartphone-table_23-2147962676.jpg"
+	},
+	{
+		"brand": "HP",
+		"id": 6,
+		"model": "probook",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "620",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/laptop-wooden-table_53876-20635.jpg"
+	},
+	{
+		"brand": "Dell",
+		"id": 7,
+		"model": "latitude",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "580",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/digital-laptop-working-global-business-concept_53876-23438.jpg"
+	},
+	{
+		"brand": "Aser",
+		"id": 8,
+		"model": "swift",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/laptop-wooden-table_53876-20635.jpg"
+	},
+	{
+		"brand": "Xiaomi",
+		"id": 9,
+		"model": "pro",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/marketing-strategy-connting-digital-devices-concept_53876-23053.jpg"
+	},
+	{
+		"brand": "MacBook",
+		"id": 10,
+		"model": "air",
+		"price": "500",
+		"specifications": {
+			"HDD": "256 GB or larger solid state hard drive",
+			"RAM": "16 GB",
+			"display": "15.6",
+			"graphics_card": "NVIDIA ® GeForce ® RTX 2060 SUPER",
+			"operating_system": "Windows 10 Home or Professional editions",
+			"price": "600",
+			"processor": "dual core 2.4 GHz+ (i5 or i7 series Intel processor or equivalent AMD)",
+			"warranty": "3 year warranty",
+			"wireless": " 802.11ac (WPA2 support required)",
+			"weight": "2.2"
+		},
+		"url": "https://image.freepik.com/free-photo/laptop-with-smartphone-table_23-2147962676.jpg"
+	}
+]

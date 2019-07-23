@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aux from './components/HOC/Aux';
+import Aux from './HOC/Aux';
 import './App.css';
 import NavigationItems from './components/NavigationItems/NavigationItems';
 import Home from './components/Home/Home';
@@ -30,15 +30,12 @@ class App extends Component {
 		})
 		axios.get('https://my-e-shop-bb02e.firebaseio.com/Goods.json')
 			.then(res => {
-				setTimeout(() => {
-					this.setState({
-						goods: res.data,
-						goodsBackup: res.data,
-						isLoading: false
-					})
-				}, 2000)
-
-
+				//console.log(res.data)
+				this.setState({
+					goods: res.data,
+					goodsBackup: res.data,
+					isLoading: false
+				})
 			})
 			.catch(err => console.log(err))
 	}
@@ -82,7 +79,6 @@ class App extends Component {
 
 	searchHandler = (e) => {
 		var searchQuery = e.target.value;
-		//console.log(searchQuery)
 
 		if (e.keyCode === 13) {
 			const searchedGoods = this.state.goods.filter((good) => {
@@ -129,9 +125,7 @@ class App extends Component {
 				</header>
 
 				<Switch>
-					<Route path='/home' render={(props) => <Home
-						{...props}
-					/>} />
+					<Route path='/home' render={(props) => <Home	{...props} />} />
 					<Route
 						exact
 						path={'/goods/:id'}
@@ -152,7 +146,6 @@ class App extends Component {
 					<Route path='/cart' render={(props) => (
 						<Cart
 							{...props}
-
 							choosedGoods={this.state.choosedGoods}
 							deleteCartItem={this.deleteCartItemHandler}
 							clearCart={this.clearCartHandler}
@@ -163,8 +156,6 @@ class App extends Component {
 					<Route render={() => <h1>Not Found!</h1>} />
 					<Redirect from='/' to='home' />
 				</Switch>
-
-
 			</div>
 		);
 	}

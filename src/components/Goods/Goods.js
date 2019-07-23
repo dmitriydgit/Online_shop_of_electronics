@@ -6,13 +6,8 @@ import classes from './Goods.module.css';
 import { withRouter } from 'react-router-dom';
 
 class Goods extends Component {
-	// state = {
-	// 	//goods: GoodsJSON,
-	// 	clickedGood: null
-	// }
 
 	changeLocation = (e, item) => {
-		//console.log(e.target, item)
 		if (e.target.tagName !== 'BUTTON') {
 			this.props.history.push({ pathname: '/goods/:' + item.id })
 		}
@@ -35,12 +30,12 @@ class Goods extends Component {
 			)
 		})
 
+		//console.log(this.props)
 
 		return (
 			<div>
 				<Search onSearch={this.props.handleSearch.bind(null)} />
 				<div className={classes.GoodsGrid}>
-
 					{goodItems}
 				</div >
 			</div>

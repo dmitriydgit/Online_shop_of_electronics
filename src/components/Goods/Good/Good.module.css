@@ -9,7 +9,7 @@
 	box-sizing: border-box; 
 	background-color: rgb(252, 252, 252);
 	width: 200px;
-	height: 450px;
+	height: 350px;
 	margin: 20px;
 	padding:5px;
 	/* box-sizing:border-box; */
@@ -22,9 +22,6 @@
 	border-radius: inherit;
 }
 
-.CardDescription{
-	/* margin-bottom: 20px; */
-}
 
 .Button{
 	text-align: center;
@@ -55,14 +52,13 @@
 }
 
 .ClickedCardImg{
-	width: 180px;
+	width:100%;
 	height: auto;
 	transition: 0.5s;
 }
 
-.ClickedCardImg:active,
-.ClickedCardImg:hover{
-	width:100%;
+.ClickedCardImg:active{
+	width:200%;
 	height:auto;
 
 	transition: 0.5s;
@@ -75,4 +71,16 @@
 	justify-content: flex-start;
 	align-items:center;
 	width:100%;
+	/* margin: 0 50px;
+	line-height: 0.5; */
+}
+
+.cardSpecification{
+text-align: left;
+}
+
+@media screen and (max-width: 1000px) {
+  .ClickedCard {
+    flex-flow:column;
+  }
 }
