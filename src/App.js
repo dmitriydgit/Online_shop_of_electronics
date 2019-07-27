@@ -1,48 +1,29 @@
 import React, { Component } from 'react';
-import Aux from './HOC/Aux';
 import './App.css';
 import NavigationItems from './components/NavigationItems/NavigationItems';
 import Home from './components/Home/Home';
 import Goods from './components/Goods/Goods';
-import Good from './components/Goods/Good/Good';
-//import FullGoodInfo from './components/FullGoodInfo/FullGoodInfo';
+import GoodCard from './components/Goods/GoodCard/GoodCard';
 import Cart from './components/Cart/Cart'
 import { Route, Switch, Redirect } from 'react-router-dom';
+//import FullGoodInfo from './components/FullGoodInfo/FullGoodInfo';
+//import Good from './components/Goods/Good/Good';
+//import Aux from './HOC/Aux';
 //import GoodsJSON from './goods.json';
-import axios from 'axios';
-import Spinner from './components/UI/Spinner/Spinner'
+// import axios from 'axios';
+// import Spinner from './components/UI/Spinner/Spinner'
 
 //const history = createBrowserHistory();
 
 class App extends Component {
 	state = {
 		choosedGoods: [],
-		goods: [],
-		goodsBackup: [],
 		clickedGood: null,
-		goodsFirebase: [],
 		isLoading: false
-	}
-
-	componentDidMount() {
-		this.setState({
-			isLoading: true
-		})
-		axios.get('https://my-e-shop-bb02e.firebaseio.com/Goods.json')
-			.then(res => {
-				//console.log(res.data)
-				this.setState({
-					goods: res.data,
-					goodsBackup: res.data,
-					isLoading: false
-				})
-			})
-			.catch(err => console.log(err))
 	}
 
 	addToCartItemHandler = (item, e) => {
 		if (e.target.tagName === 'BUTTON') {
-
 			const choosedGoods = [...this.state.choosedGoods];
 			const newItem = { ...item };
 			newItem.uniqueId = Math.random().toString(36).substr(2, 16);
@@ -71,28 +52,12 @@ class App extends Component {
 		})
 	}
 
-	showGoodHandler = (item) => {
+	clickedGoodHandler = (item) => {
 		this.setState({
 			clickedGood: item
 		})
-	}
-
-	searchHandler = (e) => {
-		var searchQuery = e.target.value;
-
-		if (e.keyCode === 13) {
-			const searchedGoods = this.state.goods.filter((good) => {
-				return good.brand.toLowerCase().indexOf(searchQuery) !== -1;
-			})
-			this.setState({
-				goods: searchedGoods,
-			})
-		}
-		if (searchQuery.length === 0) {
-			this.setState({
-				goods: this.state.goodsBackup,
-			})
-		}
+		localStorage.setItem("clickedGoodId", item.id)
+		console.log(item.id)
 	}
 
 	orderHandler = () => {
@@ -105,18 +70,6 @@ class App extends Component {
 	}
 
 	render() {
-		let GoodsLoaded = <Goods
-			{...this.props}
-			goods={this.state.goods}
-			showGood={this.showGoodHandler}
-			addToCart={this.addToCartItemHandler}
-			handleSearch={this.searchHandler}
-		/>;
-
-		if (this.state.isLoading) {
-			GoodsLoaded = <Spinner />;
-		}
-
 
 		return (
 			<div className="App" >
@@ -126,21 +79,18 @@ class App extends Component {
 
 				<Switch>
 					<Route path='/home' render={(props) => <Home	{...props} />} />
-					<Route
-						exact
-						path={'/goods/:id'}
-						render={() => (
-							<Good
-								{...this.props}
-								clickedGood={this.state.clickedGood}
-								item={this.state.clickedGood}
-								add={this.addToCartItemHandler}
-
-							/>
-						)}
-					/>
+					<Route path='/goods/:id' render={(props) => (
+						<GoodCard
+							{...props}
+							addToCart={this.addToCartItemHandler}
+						/>)} />
 					<Route path='/goods' exact render={(props) => (
-						<Aux>{GoodsLoaded} </Aux>
+						<Goods
+							{...this.props}
+							clickedGood={this.clickedGoodHandler}
+							addToCart={this.addToCartItemHandler}
+						//handleSearch={this.searchHandler}
+						/>
 					)} />
 
 					<Route path='/cart' render={(props) => (
@@ -153,8 +103,8 @@ class App extends Component {
 						/>
 					)} />
 
+					<Redirect exact from='/' to='home' />
 					<Route render={() => <h1>Not Found!</h1>} />
-					<Redirect from='/' to='home' />
 				</Switch>
 			</div>
 		);
