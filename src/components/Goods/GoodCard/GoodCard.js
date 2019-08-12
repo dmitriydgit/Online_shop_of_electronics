@@ -4,7 +4,11 @@ import Button from '../../UI/Button/Button';
 import { createBrowserHistory } from 'history';
 import Aux from '../../../HOC/Aux';
 import axios from 'axios';
-import Spinner from '../../UI/Spinner/Spinner'
+import Spinner from '../../UI/Spinner/Spinner';
+import { connect } from 'react-redux';
+//import * as actionTypes from '../../../store/actions/actions';
+import { addToCart } from '../../../store/actions/cart';
+
 
 const history = createBrowserHistory();
 
@@ -26,7 +30,6 @@ class GoodCard extends Component {
 
 		axios.get('https://my-e-shop-bb02e.firebaseio.com/Goods/' + itemId + '.json')
 			.then(response => {
-				// console.log(response.data);
 				this.setState({
 					item: response.data,
 					isLoading: false
@@ -42,7 +45,7 @@ class GoodCard extends Component {
 	}
 
 	render() {
-		// console.log(this.props)
+		console.log(this.props)
 		let card;
 		if (this.state.isLoading) {
 			card = <Spinner />
@@ -62,12 +65,12 @@ class GoodCard extends Component {
 								<li>Operating system: {this.state.item.specifications.operating_system}</li>
 								<li>Processor: {this.state.item.specifications.processor}</li>
 								<li>Wireless: {this.state.item.specifications.wireless}</li>
-								<li>Warranty: {this.state.item.specifications.wireless}</li>
+								<li>Warranty: {this.state.item.specifications.warranty}</li>
 							</ul>
 						</div>
 						<p><b>Price:</b> {this.state.item.price} EURO</p>
 						<div className={classes.Button}>
-							<Button btnType='Success' clicked={(e) => this.props.addToCart(this.state.item, e)} >
+							<Button btnType='Success' clicked={(e) => this.props.onItemAdded(this.state.item, e)} >
 								Add to cart </Button>
 						</div>
 					</div>
@@ -81,7 +84,6 @@ class GoodCard extends Component {
 
 		return (
 			<Aux>
-
 				{card}
 			</Aux>
 		)
@@ -89,5 +91,10 @@ class GoodCard extends Component {
 }
 
 
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onItemAdded: (item) => dispatch(addToCart(item)),
+	}
+}
 
-export default GoodCard;
+export default connect(null, mapDispatchToProps)(GoodCard);

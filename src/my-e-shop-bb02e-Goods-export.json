@@ -1,7 +1,7 @@
 [
 	{
 		"brand": "HP",
-		"id": 1,
+		"id": 0,
 		"model": "envy",
 		"price": "600",
 		"specifications": {
@@ -18,7 +18,7 @@
 	},
 	{
 		"brand": "Dell",
-		"id": 2,
+		"id": 1,
 		"model": "enspire",
 		"price": "650",
 		"specifications": {
@@ -36,7 +36,7 @@
 	},
 	{
 		"brand": "MacBook",
-		"id": 3,
+		"id": 2,
 		"model": "pro",
 		"price": "900",
 		"specifications": {
@@ -55,7 +55,7 @@
 	},
 	{
 		"brand": "Sony",
-		"id": 4,
+		"id": 3,
 		"model": "vaio",
 		"price": "550",
 		"specifications": {
@@ -74,7 +74,7 @@
 	},
 	{
 		"brand": "Lenovo",
-		"id": 5,
+		"id": 4,
 		"model": "yoga",
 		"price": "500",
 		"specifications": {
@@ -93,7 +93,7 @@
 	},
 	{
 		"brand": "HP",
-		"id": 6,
+		"id": 5,
 		"model": "probook",
 		"price": "500",
 		"specifications": {
@@ -112,7 +112,7 @@
 	},
 	{
 		"brand": "Dell",
-		"id": 7,
+		"id": 6,
 		"model": "latitude",
 		"price": "500",
 		"specifications": {
@@ -131,7 +131,7 @@
 	},
 	{
 		"brand": "Aser",
-		"id": 8,
+		"id": 7,
 		"model": "swift",
 		"price": "500",
 		"specifications": {
@@ -150,7 +150,7 @@
 	},
 	{
 		"brand": "Xiaomi",
-		"id": 9,
+		"id": 8,
 		"model": "pro",
 		"price": "500",
 		"specifications": {
@@ -169,7 +169,7 @@
 	},
 	{
 		"brand": "MacBook",
-		"id": 10,
+		"id": 9,
 		"model": "air",
 		"price": "500",
 		"specifications": {

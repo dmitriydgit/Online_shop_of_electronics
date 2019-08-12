@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Good from './Good/Good';
 import Search from '../Search/Search';
 import classes from './Goods.module.css';
-import { withRouter } from 'react-router-dom';
 import Spinner from '../UI/Spinner/Spinner';
 import axios from 'axios';
+
 
 class Goods extends Component {
 	state = {
@@ -28,18 +28,15 @@ class Goods extends Component {
 			.catch(err => console.log(err))
 	}
 
-	changeLocation = (e, item) => {
-		if (e.target.tagName !== 'BUTTON') {
-			this.props.history.push({ pathname: '/goods/:' + item.id })
-		}
-	}
 
 	handleSearch = (e) => {
 		var searchQuery = e.target.value;
 
 		if (e.keyCode === 13) {
-			const searchedGoods = this.state.goods.filter((good) => {
-				return good.brand.toLowerCase().indexOf(searchQuery) !== -1;
+			const searchedGoods = this.state.goodsBackup.filter((good) => {
+				return good.brand.toLowerCase().indexOf(searchQuery) !== -1 ||
+					good.specifications.display.toLowerCase().indexOf(searchQuery) !== -1 ||
+					good.model.toLowerCase().indexOf(searchQuery) !== -1
 			})
 			this.setState({
 				goods: searchedGoods,
@@ -52,28 +49,31 @@ class Goods extends Component {
 		}
 	}
 
+	clickedGoodHandler = (item) => {
+		localStorage.setItem("clickedGoodId", item.id)
+	}
+
 
 	render() {
-
 		let goodItems;
 		if (this.state.isLoading) {
 			goodItems = <Spinner />
 		} else {
-			goodItems = <p> In process! </p>
-			goodItems = this.state.goods.map(item => {
-				return (
-					<Good
-						{...this.props}
-						key={item.id}
-						item={item}
-						clicked={(e) => {
-							this.props.clickedGood(item)
-							this.changeLocation(e, item)
-						}}
-						add={this.props.addToCart.bind(null)}
-					/>
-				)
-			});
+			if (this.state.goods.length === 0) {
+				goodItems = <p> No search results! </p>
+			} else {
+
+				goodItems = this.state.goods.map(item => {
+					return (
+						<Good
+							{...this.props}
+							key={item.id}
+							item={item}
+							clicked={() => this.clickedGoodHandler(item)}
+						/>
+					)
+				});
+			}
 		}
 
 		return (
@@ -88,7 +88,6 @@ class Goods extends Component {
 }
 
 
-
-export default withRouter(Goods);
+export default Goods;
 
 

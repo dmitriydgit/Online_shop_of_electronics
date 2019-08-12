@@ -9,7 +9,7 @@ class Button extends Component {
 		return (
 			<button
 				className={[classes.Button, classes[this.props.btnType]].join(' ')}
-				onClick={this.props.clicked}>
+				onClick={this.props.clicked} disabled={this.props.disabled}>
 				{this.props.children}
 			</button>
 

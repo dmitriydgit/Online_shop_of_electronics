@@ -1,0 +1,24 @@
+export const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART';
+export const REMOVE_ITEM_FROM_CART = 'REMOVE_ITEM_FROM_CART';
+export const CLEAR_CART = 'CLEAR_CART';
+
+export const ORDER_GOODS = 'ORDER_GOODS';
+export const ORDER_START = 'ORDER_START';
+export const ORDER_SUCCESS = 'ORDER_SUCCESS';
+export const ORDER_FAIL = 'ORDER_FAIL';
+
+
+export const SHOW_GOOD_DETAIS = "SHOW_GOOD_DETAIS"
+
+export const AUTH_START = "AUTH_START";
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_FAIL = "AUTH_FAIL";
+export const AUTH_LOGOUT = "AUTH_LOGOUT";
+
+
+export const FETCH_ORDERS_START = "FETCH_ORDERS_START";
+export const FETCH_ORDERS_SUCCESS = "FETCH_ORDERS_SUCCESS";
+export const FETCH_ORDERS_FAIL = "FETCH_ORDERS_FAIL";
+//export const SWITCH_AUTH_MODE = "SWITCH_AUTH_MODE";
+
+

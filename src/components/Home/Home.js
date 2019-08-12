@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classes from './Home.module.css';
 import Button from '../UI/Button/Button';
+//import Carusel from '../../containers/Carusel/Carusel';
 
 
 class Home extends Component {
@@ -14,6 +15,8 @@ class Home extends Component {
 
 		return (
 			<div className={classes.About}>
+				{/* 
+				{<Carusel />} */}
 				<h3>Online Store Rosetka ™</h3>
 				<p>
 					Are you interested in household appliances, computers, software or products for outdoor activities? All this you can buy right now, saving a lot of time! The online store Rozetka ™ will happily help you avoid having to visit dozens of stores. You can order any product without getting up from your chair, and our courier will deliver the purchase on time to the specified address. The online store (Ukraine) Rozetka ™ operates throughout the country. Residents of any cities can easily visit our online store (Kharkov, Kiev and other cities).
