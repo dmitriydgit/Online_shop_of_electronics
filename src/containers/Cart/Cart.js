@@ -22,7 +22,7 @@ class Cart extends Component {
 	}
 
 	orderHandler = () => {
-		if (this.props.token) {
+		if (this.props.token && this.props.itemsInCart.length > 0) {
 			this.props.onOrdering()
 		} else {
 			this.props.onSetAuthRediretPath('/cart')
