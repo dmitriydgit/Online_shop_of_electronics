@@ -23,11 +23,11 @@ export const fetchOrdersFail = (error) => {
 }
 
 
-export const fetchOrders = () => {
+export const fetchOrders = (token) => {
 	return dispatch => {
 		dispatch(fetchOrdersStart())
 
-		axios.get("https://my-e-shop-bb02e.firebaseio.com/Orders.json")
+		axios.get("https://my-e-shop-bb02e.firebaseio.com/Orders.json?auth=" + token)
 			.then(
 				res => {
 					console.log(res)
@@ -39,4 +39,11 @@ export const fetchOrders = () => {
 				dispatch(fetchOrdersFail(err))
 			})
 	}
-} 
+}
+
+
+// export const purchaseInit = () => {
+// 	return {
+// 		type: actionTypes.PURCHASE_INIT
+// 	}
+// }

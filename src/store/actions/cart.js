@@ -50,7 +50,7 @@ export const initOrdering = () => {
 
 export const orderGoods = (orderData, token) => {
 	return dispatch => {
-		axios.post("https://my-e-shop-bb02e.firebaseio.com/Orders.json", orderData)
+		axios.post("https://my-e-shop-bb02e.firebaseio.com/Orders.json?auth=" + token, orderData)
 			.then(
 				res => {
 					console.log(res)
@@ -63,4 +63,5 @@ export const orderGoods = (orderData, token) => {
 				dispatch(orderFail(err))
 			})
 	}
-} 
+}
+

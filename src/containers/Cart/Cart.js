@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Button from '../../components/UI/Button/Button';
 import classes from './Cart.module.css';
 import { connect } from 'react-redux';
-import { removeFromCart, clearCart, orderGoods, initOrdering } from '../../store/actions/cart';
+import { removeFromCart, clearCart, initOrdering } from '../../store/actions/cart';
+import { setAuthRediretPath } from '../../store/actions/auth';
 import { createUniqId } from "../../shared/utility";
 import ContactData from "../../components/ContactData/ContactData";
 
@@ -21,17 +22,12 @@ class Cart extends Component {
 	}
 
 	orderHandler = () => {
-		if (this.props.itemsInCart.length > 0) {
+		if (this.props.token) {
 			this.props.onOrdering()
 		} else {
-			console.log('Nothing to order!')
+			this.props.onSetAuthRediretPath('/cart')
+			this.props.history.push('/auth')
 		}
-	}
-
-	fetchOrdersHandler = () => {
-		const userData = {
-		}
-		this.props.onFetchingOrders(this.props.itemsInCart, userData)
 	}
 
 	render() {
@@ -69,7 +65,7 @@ class Cart extends Component {
 				<div className={classes.Buttons}>
 					<Button btnType='Success' clicked={this.changeLocation}>Back to goods list!</Button>
 					<Button btnType='Danger' clicked={this.props.onClearCart}>Clear cart</Button>
-					<Button btnType='Primary' clicked={this.orderHandler}>To order!</Button>
+					<Button btnType='Primary' clicked={this.orderHandler}> {this.props.token ? "Order!" : "SignIn to order!"}</Button>
 				</div>
 				{ordering}
 			</div >
@@ -82,7 +78,8 @@ const mapStateToProps = (state) => {
 	return {
 		itemsInCart: state.cart.itemsInCart,
 		ordering: state.cart.ordering,
-		ordered: state.cart.ordered
+		ordered: state.cart.ordered,
+		token: state.auth.token
 	}
 }
 
@@ -91,7 +88,7 @@ const mapDispatchToProps = (dispatch) => {
 		onItemRemoved: (item) => dispatch(removeFromCart(item)),
 		onClearCart: () => dispatch(clearCart()),
 		onOrdering: () => dispatch(initOrdering()),
-		onFetchingOrders: (items, usedData) => dispatch(orderGoods(items, usedData)),
+		onSetAuthRediretPath: (path) => dispatch(setAuthRediretPath(path))
 	}
 }
 

@@ -4,6 +4,8 @@ import Search from '../Search/Search';
 import classes from './Goods.module.css';
 import Spinner from '../UI/Spinner/Spinner';
 import axios from 'axios';
+// import { setAuthRediretPath } from '../../store/actions/auth';
+// import { connect } from 'react-redux';
 
 
 class Goods extends Component {
@@ -87,6 +89,11 @@ class Goods extends Component {
 	}
 }
 
+// const mapDispatchToProps = (dispatch) => {
+// 	return {
+// 		onSetAuthRediretPath: (path) => dispatch(setAuthRediretPath(path))
+// 	}
+// }
 
 export default Goods;
 

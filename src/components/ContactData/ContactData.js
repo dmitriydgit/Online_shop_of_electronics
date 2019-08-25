@@ -105,7 +105,7 @@ class ContactData extends Component {
 			userInfo: formData,
 			orderInfo: this.props.itemsInCart
 		}
-		this.props.onOrder(orderData);
+		this.props.onOrder(orderData, this.props.token);
 	}
 
 	render() {

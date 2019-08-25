@@ -8,6 +8,7 @@ import Orders from './components/Orders/Orders';
 import Cart from './containers/Cart/Cart'
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Auth from './containers/Auth/Auth';
+import { connect } from "react-redux";
 
 
 class App extends Component {
@@ -25,29 +26,11 @@ class App extends Component {
 
 				<Switch>
 					<Route path='/home' render={(props) => <Home	{...props} />} />
-					<Route path='/goods/:id' render={(props) => (
-						<GoodCard
-							{...props}
-						/>)} />
-					<Route path='/goods' exact render={(props) => (
-						<Goods
-							{...props}
-						/>
-					)} />
-
-					<Route path='/cart' render={(props) => (
-						<Cart
-							{...props}
-						/>
-					)} />
-					<Route path='/orders' render={(props) => (
-						<Orders
-							{...props}
-						/>
-					)} />
-
+					<Route path='/goods/:id' render={(props) => <GoodCard {...props} />} />
+					<Route path='/goods' exact render={(props) => <Goods {...props} />} />
+					<Route path='/cart' render={(props) => <Cart {...props} />} />
+					{this.props.token ? <Route path='/orders' render={(props) => <Orders {...props} />} /> : null}
 					<Route path='/auth' component={Auth} />
-
 					<Redirect exact from='/' to='home' />
 					<Route render={() => <h1>Not Found!</h1>} />
 				</Switch>
@@ -56,7 +39,13 @@ class App extends Component {
 	}
 }
 
-export default App;
+const mapStateToProps = (state) => {
+	return {
+		token: state.auth.token
+	}
+}
+
+export default connect(mapStateToProps, null)(App);
 
 
 

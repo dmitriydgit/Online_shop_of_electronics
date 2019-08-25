@@ -11,7 +11,7 @@ import Order from './Order/Order'
 class Orders extends Component {
 
 	componentDidMount() {
-		this.props.onFetchOrders()
+		this.props.onFetchOrders(this.props.token)
 	}
 
 	changeLocation = () => {
@@ -30,7 +30,7 @@ class Orders extends Component {
 					ordersData = ordersData.concat(this.props.orders[order][item])
 				}
 			}
-			console.log(ordersData)
+			//console.log(ordersData)
 
 			orders = ordersData.map((order) => {
 
@@ -55,13 +55,14 @@ class Orders extends Component {
 const mapStateToProps = (state) => {
 	return {
 		orders: state.orders.orders,
-		loading: state.orders.loading
+		loading: state.orders.loading,
+		token: state.auth.token
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onFetchOrders: () => dispatch(actions.fetchOrders())
+		onFetchOrders: (token) => dispatch(actions.fetchOrders(token))
 	}
 }
 

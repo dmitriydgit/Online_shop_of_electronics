@@ -29,6 +29,12 @@ export const logout = () => {
 	}
 }
 
+export const setAuthRediretPath = (path) => {
+	return {
+		type: actionTypes.SET_AUTH_REDIRECT_PATH,
+		path: path
+	}
+}
 
 
 export const checkAuthTimeout = (expirationTime) => {

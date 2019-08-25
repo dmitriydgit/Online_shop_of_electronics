@@ -6,7 +6,7 @@ import * as actions from "../../store/actions/auth";
 
 class NavigationItems extends Component {
 	render() {
-		const itemsInCart = this.props.itemsInCart ? <span>({this.props.itemsInCart.length})</span> : null
+		const itemsInCart = this.props.itemsInCart ? this.props.itemsInCart.length : null;
 		return (
 
 			<ul className={classes.NavigationItems}>
@@ -15,7 +15,7 @@ class NavigationItems extends Component {
 					<NavigationItem link='/goods' >Goods</NavigationItem>
 				</div>
 				<div className={classes.mainBlock}>
-					<NavigationItem link='/cart' >Cart {itemsInCart} </NavigationItem>
+					<NavigationItem link='/cart' >Cart ({itemsInCart}) </NavigationItem>
 					{this.props.isLogedin ? <NavigationItem link='/orders' >Orders </NavigationItem> : null}
 					<NavigationItem link='/auth' ><span onClick={this.props.onLogout} >{this.props.isLogedin ? "Logout" : "Login"}</span></NavigationItem>
 				</div>

@@ -5,7 +5,9 @@ const initialState = {
 	userId: null,
 	error: null,
 	loading: false,
-	isLogedin: false
+	isLogedin: false,
+	path: null,
+	authRedirectPath: '/goods'
 
 }
 
@@ -40,6 +42,12 @@ const authReducer = (state = initialState, action) => {
 				token: null,
 				userId: null,
 				isLogedin: false
+			}
+
+		case actionTypes.SET_AUTH_REDIRECT_PATH:
+			return {
+				...state,
+				authRedirectPath: action.path
 			}
 
 		default:

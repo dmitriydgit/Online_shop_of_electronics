@@ -97,7 +97,7 @@ class Auth extends Component {
 
 		let redirectPath = null;
 		if (this.props.isAuthentificated) {
-			redirectPath = <Redirect to='/goods' />
+			redirectPath = <Redirect to={this.props.authRedirectPath} />
 		}
 
 		return (
@@ -119,6 +119,7 @@ const mapStateToProps = (state) => {
 		loading: state.auth.loading,
 		error: state.auth.error,
 		isAuthentificated: state.auth.token !== null,
+		authRedirectPath: state.auth.authRedirectPath
 	}
 }
 
