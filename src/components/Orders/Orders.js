@@ -22,6 +22,7 @@ class Orders extends Component {
 	render() {
 		let orders = <Spinner />
 
+
 		if (this.props.orders) {
 
 			let ordersData = [];
@@ -40,6 +41,9 @@ class Orders extends Component {
 				/>
 			})
 		}
+		// else {
+		// 	orders = <h2> </h2>
+		// }
 
 		return (
 			<div >

@@ -38,7 +38,6 @@ export const setAuthRediretPath = (path) => {
 
 
 export const checkAuthTimeout = (expirationTime) => {
-	console.log(expirationTime)
 	return dispacth => {
 		setTimeout(() => {
 			dispacth(logout())
@@ -54,7 +53,6 @@ export const auth = (email, password, isSignup) => {
 			password: password,
 			returnSecureToken: true
 		}
-		console.log(authData)
 
 		let defaultUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBKNyVn4_UEWXiqTKmN17Loz2QaN5e3ZAQ";
 
@@ -65,12 +63,11 @@ export const auth = (email, password, isSignup) => {
 
 		axios.post(defaultUrl, authData)
 			.then(res => {
-				console.log(res)
+
 				dispatch(authSuccess(res.data.idToken, res.data.localId))
 				dispatch(checkAuthTimeout(res.data.expiresIn))
 			})
 			.catch(err => {
-				console.log(err)
 				dispatch(authFail(err.response.data.error))
 			})
 	}

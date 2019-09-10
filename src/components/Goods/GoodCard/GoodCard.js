@@ -45,7 +45,6 @@ class GoodCard extends Component {
 	}
 
 	render() {
-		console.log(this.props)
 		let card;
 		if (this.state.isLoading) {
 			card = <Spinner />
